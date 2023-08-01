@@ -109,4 +109,4 @@
 
 
 ## 💻 Project Report
-[Wrap-Up Report Link](docs/[Recsys 8조 EXIT] Final Project Wrap Up Report.pdf)
+[Wrap-Up Report Link](https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/blob/main/docs/%5BRecsys%208%E1%84%8C%E1%85%A9%20EXIT%5D%20Final%20Project%20Wrap%20Up%20Report.pdf)
