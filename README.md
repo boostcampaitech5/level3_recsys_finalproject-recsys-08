@@ -1,26 +1,119 @@
-# 안녕하세요, Recsys 8조 EXIT입니다.
-* 최근 기술 산업 시장은 기술 확장을 위해 MOU 를 체결하거나 M&A 하는 경향성을 보이고 있습니다. EXIT는 기술적 성장을 도모하는 기업을 위해 전략적 파트너 기업을 추천하는 서비스입니다. 의뢰 기업의 과거 특허 데이터를 기반으로, 미래에 출원할 특허를 예측하고 그와 유사한 특허 양상을 지닌 기업들을 추천합니다. 인공지능 모델을 도입하여 파트너 기업 선정 시 불필요하게 사용되는 시간 및 인력을 줄이고자 서비스를 기획하였습니다. 
+# 특허 기반 전략적 기업 파트너 추천
 
-## 서비스 파이프라인
-* 같은 맥락에서 바로, End to End 구성부터 소개드리겠습니다. User와 상호작용하는 웹의 경우 Streamlit 으로 구현하였고, 이를 Dockerize 하여 GCP의 Cloud Run을 통해 배포하였습니다. 데이터의 경우 GCP의 CloudSQL에서 제공하는 MySQL 데이터베이스와 Google Cloud Storage를 통해 관리하여 필요한 시점에 필요한 데이터를 로딩하여 사용했습니다. 마지막으로, GPU를 활용해 Inference 속도를 줄이고자 Inference는 V100 서버에서 이루어졌으며, 해당 과정에서 소켓 통신을 활용했습니다.
+## **Introduction**
+---
+* 기술적 성장을 도모하는 기업의 사업자 번호를 입력받아 특허 정보를 이용해 전략적 파트너 기업을 추천하는 프로젝트
+<br><br>
 
-## 모델 파이프라인
-1. Business Embedding
-    * 특허 데이터와 기업 업종 데이터를 이용하여 각 기업의 기술력을 임베딩 벡터로 표현하는 Business Embedding 입니다. summarization, sentence embedding, retrieval 과정을 거쳐서 하나의 상장기업에 대해 기술적으로 유사한 기업들을 매핑한 결과를 도출합니다.
-2. Enterprise Valuation
-    * 시장 내 기업의 상대적 위치를 파악하고, 기술의 유효성을 정량평가할 수 있는 지표인 기업 가치를 예측하여 의뢰 기업에게 설득의 근거로 작용하는 것을 목표로 합니다.
-3. Top-K Recommendation
-    * 의뢰기업의 과거 특허 데이터를 이용해 다음으로 낼 특허를 예측하여 유사한 특허를 보유하고 있는 기업을 대상으로, Ordering & Filtering 단계를 거쳐서 선정된 상위 K개의 기업을 최종적으로 전략적 파트너로 추천합니다.
+## **[Demo](https://www.youtube.com/watch?v=E5KTuIByZmw)**
+---
+<div align="center">
+  <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/1a4a7b3f-6564-4902-97d6-48998cfbe2be">
+</div>
+<br><br>
 
-## 역할
-* 김지우 : Top-K Recommendation 구현, 데이터 크롤링 및 전처리 업무를 수행
-* 박수현 : Product Manager 및 Business Embedding을 구현
-* 석예림 : Top-K Recommendation 구현, 데이터 크롤링 및 전처리 업무를 수행
-* 임소영 : Enterprise Valuation 구현, Streamlit을 개발
-* 전증원 : Enterprise Valuation 구현, Database 를 구축 
+## **Member**
+---
+<table align="center">
+  <tr height="155px">
+    <td align="center" width="150px" height="155px">
+      <a href="https://github.com/rlawldn11703"><img src="https://avatars.githubusercontent.com/u/71757471?v=4"/></a>
+    </td>
+    <td align="center" width="150px" height="155px">
+      <a href="https://github.com/Sh-IT0311"><img src="https://avatars.githubusercontent.com/u/62042287?v=4"/></a>
+    </td>
+    <td align="center" width="150px" height="155px">
+      <a href="https://github.com/rimmiya"><img src="https://avatars.githubusercontent.com/u/43161401?v=4"/></a>
+    </td>
+    <td align="center" width="150px" height="155px">
+      <a href="https://github.com/AI-soyoung"><img src="https://avatars.githubusercontent.com/u/126646180?v=4"/></a>
+    </td>
+    <td align="center" width="150px" height="155px">
+      <a href="https://github.com/1132jjw"><img src="https://avatars.githubusercontent.com/u/62981031?v=4"/></a>
+    </td>
+  </tr>
+  <tr height="80px">
+    <td align="center" width="150px">
+      <a href="https://github.com/rlawldn11703">김지우_T5063</a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/Sh-IT0311">박수현_T5085</a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/rimmiya">석예림_T5110</a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/AI-soyoung">임소영_T5172</a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/1132jjw">전증원_T5185</a>
+    </td>
+  </tr>
+  <tr height="140px">
+    <td align="center" width="150px">
+      데이터 크롤링 및 전처리
+      <br>Top-K Recommendation
+    </td>
+    <td align="center" width="150px">
+      Product Manager
+      <br>Business Embedding
+      <br>Inference Server 개발
+    </td>
+    <td align="center" width="150px">
+      데이터 크롤링 및 전처리
+      <br>Top-K Recommendation
+    </td>
+    <td align="center" width="150px">
+      프로젝트 기획 및 제안
+      <br>Enterprise Valuation
+      <br>Streamlit 개발
+    </td>
+    <td align="center" width="150px">
+      Enterprise Valuation
+      <br>Database 구축
+    </td>
+  </tr>
+</table>
+&nbsp;
+<br><br>
+
+## **Experiment & Tools**
+---
+* (팀 구성 및 컴퓨팅 환경) 5인 1팀, 인당 V100 서버를 VSCode와 SSH로 연결하여 사용
+* (협업 환경) GitHub, Notion
+* (의사 소통) Slack, Zoom
+<br><br>
+
+## **DB Structure**
+---
+<br>
+<div align="center">
+  <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/f614c2a4-787f-498d-b899-b310cb5b4281">
+</div>
+<br><br>
+
+## **Service Pipeline**
+---
+<div align="center">
+  <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/b228407f-3e0a-4855-9cc9-872fc3ecf579">
+</div>
+
+1. User와 상호작용하는 웹의 경우, Streamlit 으로 구현하였고, 이를 Dockerize 하여 GCP의 Cloud Run을 통해 배포
+2. 데이터의 경우, GCP의 CloudSQL에서 제공하는 MySQL 데이터베이스와 Google Cloud Storage를 통해 관리
+3. Inference의 경우, GPU 및 대용량 램을 활용할 수 있도록 Inference는 V100 서버에서 이루어졌으며 해당 과정에서 소켓 통신을 활용
+<br><br>
+
+## **Model Pipeline**
+---
+<div align="center">
+  <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/adacc1fe-e207-4bcb-b69b-641297de3716">
+</div>
+
+1. Business Embedding : 특허 데이터와 기업 업종 데이터를 이용하여 각 기업의 기술력을 임베딩 벡터로 표현 및 벡터간의 유사성을 고려하여 기술적으로 유사한 기업들을 매핑
+2. Enterprise Valuation : 시장 내 기업의 상대적 위치를 파악 및 기술의 유효성을 정량평가할 수 있는 지표인 기업 가치를 예측
+3. Top-K Recommendation : 의뢰기업의 특허 데이터를 기반으로 전략적 파트너 기업을 추천
+<br><br>
 
 
-## 7월 31일(월) 마무리 예정입니다!
 
-
-
+##[Wrap-up Report](https://www.notion.so/Recsys-8-EXIT-Final-Project-Wrap-Up-Report-d69b98ae029b4a159949a6ccd1d6e8b1)
