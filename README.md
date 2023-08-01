@@ -5,14 +5,14 @@
 * 기술적 성장을 도모하는 기업의 사업자 번호를 입력받아 특허 정보를 이용해 전략적 파트너 기업을 추천하는 프로젝트
 <br><br>
 
-## **[Demo](https://www.youtube.com/watch?v=E5KTuIByZmw)**
+## 📺 [Demo](https://www.youtube.com/watch?v=E5KTuIByZmw)
 ---
 <div align="center">
   <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/1a4a7b3f-6564-4902-97d6-48998cfbe2be">
 </div>
 <br><br>
 
-## **Member**
+## 👼 Member
 ---
 <table align="center">
   <tr height="155px">
@@ -51,40 +51,33 @@
   </tr>
   <tr height="140px">
     <td align="center" width="150px">
-      데이터 크롤링 및 전처리
-      <br>Top-K Recommendation
+      데이터 크롤링 및 전처리, Top-K Recommendation
     </td>
     <td align="center" width="150px">
-      Product Manager
-      <br>Business Embedding
-      <br>Inference Server 개발
+      Product Manager, Business Embedding, Inference Server 개발
     </td>
     <td align="center" width="150px">
-      데이터 크롤링 및 전처리
-      <br>Top-K Recommendation
+      데이터 크롤링 및 전처리, Top-K Recommendation
     </td>
     <td align="center" width="150px">
-      프로젝트 기획 및 제안
-      <br>Enterprise Valuation
-      <br>Streamlit 개발
+      프로젝트 기획 및 제안, Enterprise Valuation, Streamlit 개발
     </td>
     <td align="center" width="150px">
-      Enterprise Valuation
-      <br>Database 구축
+      Enterprise Valuation, Database 구축
     </td>
   </tr>
 </table>
 &nbsp;
 <br><br>
 
-## **Experiment & Tools**
+🛠️ Experiment & Tools
 ---
 * (팀 구성 및 컴퓨팅 환경) 5인 1팀, 인당 V100 서버를 VSCode와 SSH로 연결하여 사용
 * (협업 환경) GitHub, Notion
 * (의사 소통) Slack, Zoom
 <br><br>
 
-## **DB Structure**
+🗂️ DB Structure
 ---
 <br>
 <div align="center">
@@ -92,7 +85,7 @@
 </div>
 <br><br>
 
-## **Service Pipeline**
+## 🚨 Service Pipeline
 ---
 <div align="center">
   <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/b228407f-3e0a-4855-9cc9-872fc3ecf579">
@@ -103,7 +96,7 @@
 3. Inference의 경우, GPU 및 대용량 램을 활용할 수 있도록 Inference는 V100 서버에서 이루어졌으며 해당 과정에서 소켓 통신을 활용
 <br><br>
 
-## **Model Pipeline**
+## 📍 Model Pipeline
 ---
 <div align="center">
   <img src="https://github.com/boostcampaitech5/level3_recsys_finalproject-recsys-08/assets/62042287/adacc1fe-e207-4bcb-b69b-641297de3716">
@@ -115,5 +108,5 @@
 <br><br>
 
 
-
-##[Wrap-up Report](https://www.notion.so/Recsys-8-EXIT-Final-Project-Wrap-Up-Report-d69b98ae029b4a159949a6ccd1d6e8b1)
+## 💻 Project Report
+[Wrap-Up Report Link]([Recsys 8조 EXIT] Final Project Wrap Up Report.pdf)
