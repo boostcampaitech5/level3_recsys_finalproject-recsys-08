@@ -109,4 +109,4 @@
 
 
 ## 💻 Project Report
-[Wrap-Up Report Link]([Recsys 8조 EXIT] Final Project Wrap Up Report.pdf)
+[Wrap-Up Report Link](docs/[Recsys 8조 EXIT] Final Project Wrap Up Report.pdf)
