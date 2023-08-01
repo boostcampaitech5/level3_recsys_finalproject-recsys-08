@@ -1,0 +1,8 @@
+streamlit==1.25.0
+pandas
+numpy
+streamlit-elements==0.1.0
+google-cloud-storage
+sqlalchemy
+cloud-sql-python-connector
+pymysql
