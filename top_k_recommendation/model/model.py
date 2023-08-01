@@ -156,7 +156,7 @@ class SASRec(nn.Module):
     # setting
 def setting_model(args):
     device = args.device
-    model = SASRec(args.num_items, args.max_len, args.d_embed, args.num_heads, args.num_layers, args.dropout_rate)
+    model = SASRec(args.max_len, args.d_embed, args.num_heads, args.num_layers, args.dropout_rate)
     model.to(device)
     # 모델의 가중치 파라미터를 Double 형식으로 설정
     model.apply(lambda module: setattr(module, 'dtype', torch.double))
