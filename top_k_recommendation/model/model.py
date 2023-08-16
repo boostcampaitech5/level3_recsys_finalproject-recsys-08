@@ -93,14 +93,14 @@ class SASRecBlock(nn.Module):
         return out
     
 class SASRec(nn.Module):
-    def __init__(self, max_seq_length, hidden_dim, num_heads, num_blocks, dropout):
+    def __init__(self, max_seq_length, hidden_dim, num_heads, num_blocks, dropout,initializer_range):
         super(SASRec, self).__init__()
         self.positional_encoding = PositionalEncoding(hidden_dim, max_seq_length)
         self.sas_blocks = nn.ModuleList([SASRecBlock(hidden_dim, num_heads, dropout) for _ in range(num_blocks)])
         self.dropout = nn.Dropout(dropout)
         self.layer_norm = nn.LayerNorm(hidden_dim, eps=1e-6)
 
-        self.initializer_range = args.initializer_range
+        self.initializer_range = initializer_range
         self.apply(self.init_weights)
         
     def make_pad_mask(self, x, pad_idx=0): ##
@@ -156,7 +156,7 @@ class SASRec(nn.Module):
     # setting
 def setting_model(args):
     device = args.device
-    model = SASRec(args.max_len, args.d_embed, args.num_heads, args.num_layers, args.dropout_rate)
+    model = SASRec(args.max_len, args.d_embed, args.num_heads, args.num_layers, args.dropout_rate,args.initializer_range)
     model.to(device)
     # 모델의 가중치 파라미터를 Double 형식으로 설정
     model.apply(lambda module: setattr(module, 'dtype', torch.double))
